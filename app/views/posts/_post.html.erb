@@ -1,0 +1,7 @@
+<h2><%= link_to post.title, post %></h2>
+<address><%= post.created_at.strftime("%d %b %Y") %> by Steve</address>
+<p><%= post.body %></p>
+<% if user_signed_in? %>
+  <p><%= link_to 'Edit', edit_post_path(post) %> |
+  <%= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete %></p>
+<% end %>
